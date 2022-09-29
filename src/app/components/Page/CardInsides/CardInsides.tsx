@@ -2,16 +2,17 @@ import React from 'react'
 import {View, TouchableWithoutFeedback, StyleSheet, Linking, ScrollView} from 'react-native'
 import {dataInsideCard} from "../../general/DataCard";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {Button, Text, Card} from "react-native-paper";
+
 import {observer} from "mobx-react";
 import 'react-native-get-random-values'
 import {v4 as uuid} from 'uuid'
+import {Image, Card, Text, Button} from "@rneui/themed";
 
 const icon = <FontAwesome5 name={'check'}/>;
 const iconDoc = <FontAwesome5 name={'pen'}/>;
 const iconEx = <FontAwesome5 name={'exclamation'}/>;
 const iconFile = <FontAwesome5 name={'file'}/>;
-const iconEntry = <FontAwesome5 name={'arrow-right'}/>;
+
 
 
 export default observer(() => {
@@ -28,8 +29,9 @@ export default observer(() => {
                     dataInsideCard.map((d) => (
                         <View key={uuid()}>
 
-                            <Card.Cover key={uuid()} style={{borderRadius: 20, margin: 20}}
-                                        source={{uri: 'https://acdn.tinkoff.ru/static/pages/files/66521906-d9f1-4dfa-8bcf-125e54474d31.png'}}/>
+                            <Image
+                                containerStyle={{width: "100%", height: 150, marginBottom: 20}}
+                                source={{uri: `${d.title}`}}/>
 
                             <Text key={uuid()}
                                   style={{fontWeight: 'bold', margin: 10, fontSize: 30, textAlign: 'center'}}>
@@ -65,13 +67,7 @@ export default observer(() => {
                                     <Text style={{margin: 10, color: 'rgba(0,0,0,0.57)'}}>{iconDoc}</Text>
                                 </View>
                                 <View key={uuid()} style={{paddingTop: 10, paddingBottom: 10}}>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }}>
+                                    <Card containerStyle={styles.card}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Рассмотрение заявки
@@ -86,13 +82,7 @@ export default observer(() => {
                                             </View>
                                         </View>
                                     </Card>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }}>
+                                    <Card containerStyle={styles.card}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Пролонгация
@@ -108,13 +98,7 @@ export default observer(() => {
                                             </View>
                                         </View>
                                     </Card>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text key={uuid()} style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Получение займа
@@ -130,13 +114,7 @@ export default observer(() => {
                                             </View>
                                         </View>
                                     </Card>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text key={uuid()} style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Место заключения договора
@@ -152,13 +130,7 @@ export default observer(() => {
                                             </View>
                                         </View>
                                     </Card>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text key={uuid()} style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Погашение
@@ -186,13 +158,7 @@ export default observer(() => {
                                 </View>
 
                                 <View style={{paddingTop: 10, paddingBottom: 10}} key={uuid()}>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5,
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text key={uuid()} style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Минимальный возраст
@@ -208,13 +174,7 @@ export default observer(() => {
                                             </View>
                                         </View>
                                     </Card>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text key={uuid()} style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Гражданство РФ
@@ -230,13 +190,7 @@ export default observer(() => {
                                             </View>
                                         </View>
                                     </Card>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text key={uuid()} style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Мобильный телефон
@@ -252,13 +206,7 @@ export default observer(() => {
                                             </View>
                                         </View>
                                     </Card>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <Text style={[styles.text, {fontWeight: 'bold'}]}>
                                                 Подтверждение платёжеспособности
@@ -286,13 +234,7 @@ export default observer(() => {
                                           style={{margin: 10, color: 'rgba(255,0,0,0.57)'}}>{iconFile}</Text>
                                 </View>
                                 <View key={uuid()} style={{paddingTop: 10, paddingBottom: 10}}>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <View key={uuid()} style={styles.viewText}>
                                                 <Text key={uuid()} style={[styles.text]}>
@@ -305,13 +247,7 @@ export default observer(() => {
                                             </View>
                                         </View>
                                     </Card>
-                                    <Card style={{
-                                        borderRadius: 20,
-                                        marginRight: 20,
-                                        marginBottom: 10,
-                                        marginLeft: 20,
-                                        padding: 5
-                                    }} key={uuid()}>
+                                    <Card containerStyle={styles.card} key={uuid()}>
                                         <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                             <View key={uuid()} style={styles.viewText}>
                                                 <Text key={uuid()} style={[styles.text]}>
@@ -333,10 +269,59 @@ export default observer(() => {
                     ))
                 }
                 <TouchableWithoutFeedback onPress={open}>
-                    <Button style={{marginRight: 20, padding: 10, backgroundColor: 'rgb(9,209,17)', marginLeft: 20,marginBottom:20}}
-                            mode="contained">
-                        <Text variant="titleMedium" style={{color: '#ffffff'}}>Перейти {iconEntry}</Text>
-                    </Button>
+                    <View style={{
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flex: 1,
+                    }}>
+                        <Button
+                            title="Перейти"
+                            icon={{
+                                name: 'arrow-right',
+                                type: 'font-awesome',
+                                size: 20,
+                                color: 'white',
+                            }}
+                            iconContainerStyle={{marginRight: 10}}
+                            titleStyle={{fontWeight: '900'}}
+                            buttonStyle={{
+                                backgroundColor: 'rgb(242,82,159)',
+                                borderColor: 'transparent',
+                                borderWidth: 0,
+                                borderRadius: 20,
+                                height: 60,
+                            }}
+                            iconRight
+                            containerStyle={{
+                                width: 330,
+                                marginHorizontal: 50,
+                                marginVertical: 10,
+
+                            }}
+                        />
+                    </View>
+                    {/*<Button*/}
+                    {/*    title="dsdss"*/}
+                    {/*    icon={{*/}
+                    {/*        name: 'home',*/}
+                    {/*        type: 'font-awesome',*/}
+                    {/*        size: 25,*/}
+                    {/*        color: 'white',*/}
+                    {/*    }}*/}
+                    {/*    iconRight*/}
+                    {/*    titleStyle={{fontWeight: '700'}}*/}
+                    {/*    buttonStyle={styles.btn}*/}
+                    {/*    containerStyle={{*/}
+                    {/*        width: 70,*/}
+                    {/*        marginHorizontal: 50,*/}
+                    {/*        marginVertical: 10,*/}
+                    {/*        borderRadius: 15,*/}
+                    {/*    }}*/}
+                    {/*/>*/}
+                    {/*<Button style={{marginRight: 20, padding: 10, backgroundColor: 'rgb(9,209,17)', marginLeft: 20,marginBottom:20}}*/}
+                    {/*        mode="contained">*/}
+                    {/*    <Text variant="titleMedium" style={{color: '#ffffff'}}>Перейти {iconEntry}</Text>*/}
+                    {/*</Button>*/}
                 </TouchableWithoutFeedback>
             </ScrollView>
         </View>
@@ -349,7 +334,23 @@ const styles = StyleSheet.create({
 
         backgroundColor: '#ffffff'
     },
-    viewForText: {},
+    btn: {
+        marginRight: 20,
+        padding: 10,
+        backgroundColor: 'rgba(90, 154, 230, 1)',
+        borderColor: 'transparent',
+        borderWidth: 0,
+        borderRadius: 30,
+        marginLeft: 20,
+        marginBottom: 20
+    },
+    card: {
+        borderRadius: 20,
+        marginRight: 20,
+        marginBottom: 10,
+        marginLeft: 20,
+        padding: 5
+    },
     viewText: {
         padding: 20,
         justifyContent: 'space-between',

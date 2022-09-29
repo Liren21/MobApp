@@ -68,6 +68,7 @@ export const data = [
 ]
 export const dataInsideCard = [
     {
+        title: 'https://acdn.tinkoff.ru/static/pages/files/66521906-d9f1-4dfa-8bcf-125e54474d31.png',
         bat: 'От 0% в день',
         sumOne: '100-30 000 P',
         app: 'До 15 минут',

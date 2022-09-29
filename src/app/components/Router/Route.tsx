@@ -26,7 +26,6 @@ export default observer(({}) => {
                     title:'',
                     headerTintColor:'#F2529FFF',
                     headerStyle:{
-
                         backgroundColor:'#F4C96C'
                     }
                 }} component={CardInfo}/>

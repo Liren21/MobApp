@@ -8,15 +8,15 @@ import {Button} from "@rneui/themed";
 import {Text} from "@rneui/themed";
 
 
-export default observer(({navigation}:any) => {
+export default observer(({navigation}: any) => {
     const loadScene = () => {
         navigation.navigate('Займ')
         pageStore.setHeader(false)
     }
-    const loadSceneTwo = () => {
-        navigation.navigate('Политика конфидициальности')
-
-    }
+    // const loadSceneTwo = () => {
+    //     navigation.navigate('Политика конфидициальности')
+    //
+    // }
 
 
     return (
@@ -26,11 +26,10 @@ export default observer(({navigation}:any) => {
                     <Text style={styles.textOne}>Добро пожаловать в </Text>
                 </View>
                 <View style={styles.mainText}>
-
                     <Text style={styles.textName}>Pro займ</Text>
                 </View>
                 <View style={styles.mainText}>
-                    <Text>Быстро, качественно, надежно</Text>
+                    <Text style={styles.textOne}>Быстро, качественно, надежно</Text>
                 </View>
 
                 <View style={styles.containerText}>
@@ -43,7 +42,7 @@ export default observer(({navigation}:any) => {
                         icon={{
                             name: 'sign-out',
                             type: 'font-awesome',
-                            size: 15,
+                            size: 20,
                             color: 'white',
                         }}
                         iconRight
@@ -54,10 +53,10 @@ export default observer(({navigation}:any) => {
                             borderColor: 'transparent',
                             borderWidth: 0,
                             borderRadius: 15,
-                            height: 44,
+                            height: 50,
                         }}
                         containerStyle={{
-                            width: 200,
+                            width: 250,
                             marginHorizontal: 50,
                             marginVertical: 10,
                             borderRadius: 15,
@@ -103,7 +102,6 @@ const styles = StyleSheet.create({
     textOne: {
         color: "#193B59",
         fontWeight: "bold",
-
     },
     textOnePod: {
         color: '#193B59',
@@ -123,7 +121,7 @@ const styles = StyleSheet.create({
         color: '#0d6efd'
     },
     box: {
-        borderRadius:15,
+        borderRadius: 15,
         marginTop: 70,
     }
 });
