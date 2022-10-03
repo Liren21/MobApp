@@ -1,11 +1,10 @@
 import * as React from 'react';
-import {Text} from 'react-native-paper';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
 import {data} from "../../general/DataCard";
 import {observer} from "mobx-react";
 import 'react-native-get-random-values'
 import {v4 as uuid} from 'uuid'
-import {Button, Card, Image} from '@rneui/themed';
+import {Button, Card, Image, Text} from '@rneui/themed';
 
 
 export default observer(({navigation}: any) => {
@@ -14,28 +13,29 @@ export default observer(({navigation}: any) => {
     }
 
     return (
-        <View style={styles.cardInfo}>
+        <SafeAreaView style={styles.cardInfo}>
             <ScrollView>
+                <Text style={styles.text}>Подайте заявку в 3-4 организации для 100% одобрения!</Text>
                 <View style={styles.container}>
-                    <Text style={styles.text}>Подайте заявку в 3-4 организации для 100% одобрения!</Text>
+
                     {
                         data.map((d) => (
                             <Card key={uuid()} containerStyle={styles.card}>
-
-                                <Image
-                                    containerStyle={{width:"100%",height:150,borderRadius: 20, marginBottom: 20}}
-                                    source={{uri: `${d.title}`}}/>
-                                <View style={styles.contentText}>
-                                    <Text style={styles.textInCard}> {d.loan}</Text>
-                                </View>
-                                <View style={styles.contentText}>
-                                    <Text style={
-                                        styles.textInCard}> Сумма: <Text
-                                        style={{fontWeight: 'bold'}}>{d.sum}</Text></Text>
-                                </View>
-                                <View style={styles.contentText}>
-                                    <Text style={styles.textInCard}> Ставка: <Text
-                                        style={{fontWeight: 'bold'}}>{d.bet}</Text> </Text>
+                                <View style={styles.row}>
+                                    <Image
+                                        containerStyle={{width: "50%", height: 150, borderRadius: 20, marginBottom: 10}}
+                                        source={{uri: `${d.title}`}}/>
+                                    <View>
+                                        <View style={styles.contentText}>
+                                            <Text style={{fontWeight: 'bold'}}>{d.loan}</Text>
+                                        </View>
+                                        <View style={styles.contentText}>
+                                            <Text style={{fontWeight: 'bold'}}>Сумма: {d.sum}</Text>
+                                        </View>
+                                        <View style={styles.contentText}>
+                                            <Text style={{fontWeight: 'bold'}}>Ставка: {d.bet}</Text>
+                                        </View>
+                                    </View>
                                 </View>
 
                                 <View style={styles.ko}>
@@ -79,47 +79,44 @@ export default observer(({navigation}: any) => {
                                         }}
                                     />
                                 </View>
-
                             </Card>
                         ))
                     }
 
                 </View>
             </ScrollView>
-        </View>
+        </SafeAreaView>
     );
 })
 
 const styles = StyleSheet.create({
     cardInfo: {
-        backgroundColor: '#F4C96C'
+        paddingTop: 100,
+        backgroundColor: '#D9D6FE'
     },
     ko: {
         justifyContent: 'space-evenly',
         flexDirection: 'row-reverse'
     },
-    container: {
-        padding: 10,
-    },
+    container: {},
     card: {
-        backgroundColor: '#4681F2',
         marginBottom: 10,
-        borderRadius: 20,
-        borderColor:'rgba(70,129,242,0)'
+        borderRadius: 25,
+        borderColor: 'rgba(70,129,242,0)'
     },
     text: {
         textAlign: "center",
+        marginTop: 10,
         marginBottom: 10,
         fontWeight: "bold"
     },
     contentText: {
-        marginBottom: 10,
+        marginTop: 17,
+        marginBottom: 17,
     },
-    chance: {
-        marginBottom: 10,
-    },
+    chance: {},
     btn: {
-        backgroundColor: 'rgb(242,82,159)',
+        backgroundColor: '#9B8AFB',
         borderColor: 'transparent',
         borderWidth: 0,
         borderRadius: 15,
@@ -129,11 +126,9 @@ const styles = StyleSheet.create({
     btnText: {
         color: '#ffffff'
     },
-    textInCard: {
-        backgroundColor: 'rgb(255,255,255)',
-        borderRadius: 20,
-        width: 160,
-        padding: 10
-    }
+    row: {
+        justifyContent: 'space-around',
+        flexDirection: 'row'
+    },
 });
 

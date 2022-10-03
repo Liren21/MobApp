@@ -6,7 +6,7 @@ import InfoCard from "../Page/CardInsides/CardInsides";
 import pageStore from "../../lib/store/page-store";
 import DocSog from "../Page/Doc/DocSog";
 import {observer} from "mobx-react";
-import Home from "../Home/Home";
+
 
 const Stack = createStackNavigator();
 export default observer(({}) => {
@@ -18,24 +18,26 @@ export default observer(({}) => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen  name={'Мой займ'} options={pageStore.header ? {headerShown: true} : {headerShown: false}}
-                              component={Home}/>
+                {/*<Stack.Screen  name={'Мой займ'} options={{headerShown: false}}*/}
+                {/*              component={Home}/>*/}
                 <Stack.Screen name={'Займ'}  options={{
                     gestureEnabled: true,
-                    headerPressColor: '#F4C96C',
+                    headerPressColor: '#4681F2',
                     title:'',
                     headerTintColor:'#F2529FFF',
                     headerStyle:{
-                        backgroundColor:'#F4C96C'
-                    }
+                        backgroundColor:'#4681F2'
+                    },headerShown: false
                 }} component={CardInfo}/>
                 <Stack.Screen name={'name'} options={{
                     gestureEnabled: true,
-                    title:''
+                    title:'',
+                    headerShown: false
                 }} component={InfoCard}/>
                 <Stack.Screen name={'Политика конфидициальности'} options={{
                     gestureEnabled: true,
-                    title:''
+                    title:'',
+                    headerShown: false
                 }} component={DocSog}/>
             </Stack.Navigator>
         </NavigationContainer>

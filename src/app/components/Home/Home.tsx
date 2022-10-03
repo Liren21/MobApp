@@ -25,8 +25,9 @@ export default observer(({navigation}: any) => {
                 <View style={styles.mainText}>
                     <Text style={styles.textOne}>Добро пожаловать в </Text>
                 </View>
+
                 <View style={styles.mainText}>
-                    <Text style={styles.textName}>Pro займ</Text>
+                    <Text style={styles.textName}>Pro zайм</Text>
                 </View>
                 <View style={styles.mainText}>
                     <Text style={styles.textOne}>Быстро, качественно, надежно</Text>
@@ -49,7 +50,7 @@ export default observer(({navigation}: any) => {
                         iconContainerStyle={{marginLeft: 10}}
                         titleStyle={{fontWeight: '700'}}
                         buttonStyle={{
-                            backgroundColor: 'rgb(242,82,159)',
+                            backgroundColor: '#5925DC',
                             borderColor: 'transparent',
                             borderWidth: 0,
                             borderRadius: 15,
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 20,
         flex: 1,
-        backgroundColor: '#F4C96C'
+        backgroundColor: '#D9D6FE'
     },
     mainText: {
         marginBottom: 5,
@@ -95,8 +96,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textName: {
-        color: "#193B59",
-        fontWeight: "bold",
+        color: "#000000",
+
         fontSize: 70
     },
     textOne: {
@@ -123,5 +124,10 @@ const styles = StyleSheet.create({
     box: {
         borderRadius: 15,
         marginTop: 70,
+    },
+    img: {
+        flex: 1,
+        aspectRatio: 1.5,
+        resizeMode: 'contain',
     }
 });

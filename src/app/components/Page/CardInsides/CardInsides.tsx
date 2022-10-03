@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, TouchableWithoutFeedback, StyleSheet, Linking, ScrollView} from 'react-native'
+import {View, TouchableWithoutFeedback, StyleSheet, Linking, ScrollView, SafeAreaView} from 'react-native'
 import {dataInsideCard} from "../../general/DataCard";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
@@ -14,7 +14,6 @@ const iconEx = <FontAwesome5 name={'exclamation'}/>;
 const iconFile = <FontAwesome5 name={'file'}/>;
 
 
-
 export default observer(() => {
     const open = () => {
         let url = 'http://www.baidu.com';
@@ -23,15 +22,17 @@ export default observer(() => {
 
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <ScrollView>
                 {
                     dataInsideCard.map((d) => (
                         <View key={uuid()}>
 
-                            <Image
-                                containerStyle={{width: "100%", height: 150, marginBottom: 20}}
-                                source={{uri: `${d.title}`}}/>
+                            <View style={{margin: 10}}>
+                                <Image
+                                    containerStyle={{width: "100%", height: 150, borderRadius: 20}}
+                                    source={{uri: `${d.title}`}}/>
+                            </View>
 
                             <Text key={uuid()}
                                   style={{fontWeight: 'bold', margin: 10, fontSize: 30, textAlign: 'center'}}>
@@ -285,7 +286,7 @@ export default observer(() => {
                             iconContainerStyle={{marginRight: 10}}
                             titleStyle={{fontWeight: '900'}}
                             buttonStyle={{
-                                backgroundColor: 'rgb(242,82,159)',
+                                backgroundColor: '#9B8AFB',
                                 borderColor: 'transparent',
                                 borderWidth: 0,
                                 borderRadius: 20,
@@ -324,15 +325,16 @@ export default observer(() => {
                     {/*</Button>*/}
                 </TouchableWithoutFeedback>
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 
 })
 
 const styles = StyleSheet.create({
     container: {
-
-        backgroundColor: '#ffffff'
+        paddingTop: 40,
+        flex: 1,
+        backgroundColor: '#D9D6FE'
     },
     btn: {
         marginRight: 20,
