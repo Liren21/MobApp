@@ -91,7 +91,7 @@ export default observer(({navigation}: any) => {
 
 const styles = StyleSheet.create({
     cardInfo: {
-        paddingTop: 40,
+        paddingTop: 60,
         backgroundColor: '#D9D6FE'
     },
     ko: {
