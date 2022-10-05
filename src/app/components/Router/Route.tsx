@@ -23,7 +23,7 @@ export default observer(({}) => {
                 <Stack.Screen name={'Займ'}  options={{
                     gestureEnabled: true,
                     headerPressColor: '#4681F2',
-                    title:'',
+                    title:'Подайте заявку в 3-4 организации для 100% одобрения!',
                     headerTintColor:'#F2529FFF',
                     headerStyle:{
                         backgroundColor:'#4681F2'
