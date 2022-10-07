@@ -26,6 +26,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.liren21.LastP"
+          "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
