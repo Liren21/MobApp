@@ -3,10 +3,12 @@ import {makeAutoObservable} from 'mobx'
 
 interface IPageStore {
     header: boolean
+
 }
 
 class PageStore implements IPageStore {
     header = false
+    img = null
 
     constructor() {
         makeAutoObservable(this)

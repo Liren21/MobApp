@@ -1,16 +1,16 @@
 import * as React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
+import {Linking, SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
 import {data} from "../../general/DataCard";
 import {observer} from "mobx-react";
 import 'react-native-get-random-values'
 import {v4 as uuid} from 'uuid'
 import {Button, Card, Image, Text} from '@rneui/themed';
+import CardInsides from "../CardInsides/CardInsides";
 
 
-export default observer(({navigation}: any) => {
-    const loadScene = () => {
-        navigation.navigate('name')
-    }
+export default observer(() => {
+
+
 
     return (
         <SafeAreaView style={styles.cardInfo}>
@@ -20,7 +20,9 @@ export default observer(({navigation}: any) => {
 
                     {
                         data.map((d) => (
+
                             <Card key={uuid()} containerStyle={styles.card}>
+
                                 <View style={styles.row}>
                                     <Image
                                         containerStyle={{width: "50%", height: 150, borderRadius: 20, marginBottom: 10}}
@@ -40,7 +42,9 @@ export default observer(({navigation}: any) => {
 
                                 <View style={styles.ko}>
                                     <Button
-                                        onPress={loadScene}
+                                        onPress={() => {
+                                            Linking.openURL(d.link)
+                                        }}
                                         title=""
                                         icon={{
                                             name: 'sign-out',
@@ -59,26 +63,9 @@ export default observer(({navigation}: any) => {
                                         }}
                                     />
 
-                                    <Button
-                                        onPress={loadScene}
-                                        title=""
-                                        icon={{
-                                            name: 'info',
-                                            type: 'font-awesome',
-                                            size: 25,
-                                            color: 'white',
-                                        }}
-                                        iconRight
-                                        titleStyle={{fontWeight: '700'}}
-                                        buttonStyle={styles.btn}
-                                        containerStyle={{
-                                            width: 70,
-                                            marginHorizontal: 50,
-                                            marginVertical: 10,
-                                            borderRadius: 15,
-                                        }}
-                                    />
+                                    <CardInsides data={d}/>
                                 </View>
+
                             </Card>
                         ))
                     }
