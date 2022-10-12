@@ -1,22 +1,25 @@
 import * as React from 'react';
-import {Linking, SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
 import {data} from "../../general/DataCard";
 import {observer} from "mobx-react";
 import 'react-native-get-random-values'
 import {v4 as uuid} from 'uuid'
 import {Button, Card, Image, Text} from '@rneui/themed';
 import CardInsides from "../CardInsides/CardInsides";
+import pageStore from "../../../lib/store/page-store";
 
 
-export default observer(() => {
+export default observer(({navigation}: any) => {
 
-
-
+    const web = ({val}: { val: any }) => {
+        navigation.navigate('web')
+        pageStore.setLink(val)
+    }
     return (
         <SafeAreaView style={styles.cardInfo}>
             <ScrollView>
                 <Text style={styles.text}>Подайте заявку в 3-4 организации для 100% одобрения!</Text>
-                <View style={styles.container}>
+                <View>
 
                     {
                         data.map((d) => (
@@ -29,22 +32,21 @@ export default observer(() => {
                                         source={{uri: `${d.title}`}}/>
                                     <View>
                                         <View style={styles.contentText}>
-                                            <Text style={{fontWeight: 'bold'}}>{d.loan}</Text>
+                                            <Text style={styles.secondText}>{d.loan}</Text>
                                         </View>
                                         <View style={styles.contentText}>
-                                            <Text style={{fontWeight: 'bold'}}>Сумма: {d.sum}</Text>
+                                            <Text style={styles.secondText}>Сумма: {d.sum}</Text>
                                         </View>
                                         <View style={styles.contentText}>
-                                            <Text style={{fontWeight: 'bold'}}>Ставка: {d.bet}</Text>
+                                            <Text style={styles.secondText}>Ставка: {d.bet}</Text>
                                         </View>
                                     </View>
                                 </View>
 
                                 <View style={styles.ko}>
                                     <Button
-                                        onPress={() => {
-                                            Linking.openURL(d.link)
-                                        }}
+                                        testID={d.link}
+                                        onPress={() => web({val: d.link})}
                                         title=""
                                         icon={{
                                             name: 'sign-out',
@@ -52,7 +54,6 @@ export default observer(() => {
                                             size: 25,
                                             color: 'white',
                                         }}
-                                        iconRight
                                         titleStyle={{fontWeight: '700'}}
                                         buttonStyle={styles.btn}
                                         containerStyle={{
@@ -78,37 +79,39 @@ export default observer(() => {
 
 const styles = StyleSheet.create({
     cardInfo: {
-        paddingTop: 60,
-        backgroundColor: '#D9D6FE'
+        backgroundColor: '#D9D6FE',
+
     },
     ko: {
         justifyContent: 'space-evenly',
         flexDirection: 'row-reverse'
     },
-    container: {},
     card: {
+        borderColor: '#ffffff',
         marginBottom: 10,
-        borderRadius: 25,
-        borderColor: 'rgba(70,129,242,0)'
+        borderRadius: 30,
     },
     text: {
         textAlign: "center",
-        marginTop: 10,
         marginBottom: 10,
         fontWeight: "bold"
     },
     contentText: {
-        marginTop: 17,
-        marginBottom: 17,
+        marginBottom: 18,
     },
-    chance: {},
+    secondText: {
+        fontWeight: 'bold',
+        color: '#9B8AFB',
+        backgroundColor: "rgba(0,0,0,0.05)",
+        padding: 10,
+        borderRadius: 13,
+    },
     btn: {
         backgroundColor: '#9B8AFB',
         borderColor: 'transparent',
         borderWidth: 0,
         borderRadius: 15,
         height: 44,
-
     },
     btnText: {
         color: '#ffffff'

@@ -1,40 +1,33 @@
-import React, {useEffect} from "react";
+import React from "react";
 import CardInfo from "../Page/Cards/CardInfo";
 import {createStackNavigator} from "@react-navigation/stack";
 import {NavigationContainer} from "@react-navigation/native";
-import InfoCard from "../Page/CardInsides/CardInsides";
-import pageStore from "../../lib/store/page-store";
 import DocSog from "../Page/Doc/DocSog";
 import {observer} from "mobx-react";
+import MyWebComponent from "../general/MyWebComponent";
 
 
 const Stack = createStackNavigator();
 export default observer(({}) => {
-    useEffect(() => {
-        {
-            !pageStore.header
-        }
-    })
+
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                {/*<Stack.Screen  name={'Мой займ'} options={{headerShown: false}}*/}
-                {/*              component={Home}/>*/}
-                <Stack.Screen name={'Займ'}  options={{
+                <Stack.Screen name={'Займ'} options={{
+                    title: '',
                     gestureEnabled: true,
-                    headerTintColor:'#F2529FFF',
-                    headerStyle:{
-                        backgroundColor:'#4681F2'
-                    },headerShown: false
+                    headerStyle: {
+                        backgroundColor: 'rgb(217,214,254)',
+                    }, headerShown: true
                 }} component={CardInfo}/>
-                <Stack.Screen name={'name'} options={{
+                <Stack.Screen name={'web'} options={{
                     gestureEnabled: true,
-                    title:'',
-                    headerShown: false
-                }} component={InfoCard}/>
+                    title: '',
+                    headerShown: true
+                }} component={MyWebComponent}/>
                 <Stack.Screen name={'Политика конфидициальности'} options={{
                     gestureEnabled: true,
-                    title:'',
+                    title: '',
                     headerShown: false
                 }} component={DocSog}/>
             </Stack.Navigator>

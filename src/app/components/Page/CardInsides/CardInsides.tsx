@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import {View, StyleSheet,  ScrollView,} from 'react-native'
-import { dataInsideCard} from "../../general/DataCard";
+import {View, StyleSheet, ScrollView,} from 'react-native'
+import {dataInsideCard} from "../../general/DataCard";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import {observer} from "mobx-react";
@@ -37,9 +37,8 @@ export default observer(({data}: ICardInside) => {
                     name: 'info',
                     type: 'font-awesome',
                     size: 25,
-                    color: 'white',
+                    color: '#9B8AFB',
                 }}
-                iconRight
                 titleStyle={{fontWeight: '700'}}
                 buttonStyle={styles.btn}
                 containerStyle={{
@@ -64,7 +63,7 @@ export default observer(({data}: ICardInside) => {
                                     <View>
                                         <Image
                                             containerStyle={{
-                                                backgroundColor:"#fff",
+                                                backgroundColor: "#fff",
                                                 width: "100%",
                                                 height: 150,
                                                 borderRadius: 20,
@@ -382,8 +381,8 @@ const styles = StyleSheet.create({
         margin: 70
     },
     btn: {
-        backgroundColor: 'rgba(0,0,0,0.17)',
-        borderColor: 'transparent',
+        backgroundColor: 'rgba(0,0,0,0.05)',
+        borderColor: '#000000',
         borderWidth: 0,
         borderRadius: 15,
         height: 44,

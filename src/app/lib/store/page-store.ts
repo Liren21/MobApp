@@ -3,20 +3,20 @@ import {makeAutoObservable} from 'mobx'
 
 interface IPageStore {
     header: boolean
+    link: string
 
 }
 
 class PageStore implements IPageStore {
     header = false
-    img = null
+    link = ''
 
     constructor() {
         makeAutoObservable(this)
     }
 
-    setHeader(val:boolean){
-        this.header = val
-        console.log(val)
+    setLink(val:string){
+        this.link = val
     }
 
 }
