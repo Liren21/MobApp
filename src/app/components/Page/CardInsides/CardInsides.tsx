@@ -37,7 +37,7 @@ export default observer(({data}: ICardInside) => {
                     name: 'info',
                     type: 'font-awesome',
                     size: 25,
-                    color: '#9B8AFB',
+                    color: '#ffffff',
                 }}
                 titleStyle={{fontWeight: '700'}}
                 buttonStyle={styles.btn}
@@ -375,13 +375,13 @@ const styles = StyleSheet.create({
 
     },
     dialog: {
-        backgroundColor: '#D9D6FE',
+        backgroundColor: 'rgb(217,214,254)',
         borderRadius: 20,
         width: '85%',
         margin: 70
     },
     btn: {
-        backgroundColor: 'rgba(0,0,0,0.05)',
+        backgroundColor: 'rgba(155,138,251,0.4)',
         borderColor: '#000000',
         borderWidth: 0,
         borderRadius: 15,

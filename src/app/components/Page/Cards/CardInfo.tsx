@@ -51,7 +51,7 @@ export default observer(({navigation}: any) => {
                                         icon={{
                                             name: 'sign-out',
                                             type: 'font-awesome',
-                                            size: 25,
+                                            size: 20,
                                             color: 'white',
                                         }}
                                         titleStyle={{fontWeight: '700'}}
