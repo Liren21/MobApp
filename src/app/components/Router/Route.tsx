@@ -8,7 +8,7 @@ import MyWebComponent from "../general/MyWebComponent";
 
 
 const Stack = createStackNavigator();
-export default observer(({}) => {
+export default observer(() => {
 
     return (
         <NavigationContainer>
