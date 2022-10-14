@@ -15,7 +15,7 @@ class PageStore implements IPageStore {
         makeAutoObservable(this)
     }
 
-    setLink(val:string){
+    setLink(val: string) {
         this.link = val
     }
 

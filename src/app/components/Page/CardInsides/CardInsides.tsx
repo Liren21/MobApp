@@ -139,7 +139,7 @@ export default observer(({data}: ICardInside) => {
                                                         Пролонгация
                                                     </Text>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.prolongation}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -158,7 +158,7 @@ export default observer(({data}: ICardInside) => {
                                                         Получение займа
                                                     </Text>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.loanOne}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -177,7 +177,7 @@ export default observer(({data}: ICardInside) => {
                                                         Место заключения договора
                                                     </Text>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.contract}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -196,7 +196,7 @@ export default observer(({data}: ICardInside) => {
                                                         Погашение
                                                     </Text>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.repayment}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -230,7 +230,7 @@ export default observer(({data}: ICardInside) => {
                                                         Минимальный возраст
                                                     </Text>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.age}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -249,7 +249,7 @@ export default observer(({data}: ICardInside) => {
                                                         Гражданство РФ
                                                     </Text>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.prolongation}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -268,7 +268,7 @@ export default observer(({data}: ICardInside) => {
                                                         Мобильный телефон
                                                     </Text>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.mob}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -287,7 +287,7 @@ export default observer(({data}: ICardInside) => {
                                                         Подтверждение платёжеспособности
                                                     </Text>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.solvency}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -320,7 +320,7 @@ export default observer(({data}: ICardInside) => {
                                             <Card containerStyle={styles.card} key={uuid()}>
                                                 <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.profile}
                                                         </Text>
                                                         <Text key={uuid()}
@@ -336,7 +336,7 @@ export default observer(({data}: ICardInside) => {
                                             <Card containerStyle={styles.card} key={uuid()}>
                                                 <View key={uuid()} style={{marginRight: 15, marginLeft: 15}}>
                                                     <View key={uuid()} style={styles.viewText}>
-                                                        <Text key={uuid()} style={[styles.text]}>
+                                                        <Text key={uuid()} style={styles.text}>
                                                             {d.passpotr}
                                                         </Text>
                                                         <Text key={uuid()}
