@@ -2,6 +2,7 @@ import * as React from 'react';
 import {observer} from "mobx-react";
 import WebView from "react-native-webview";
 
+
 import {ActivityIndicator, BackHandler, StatusBar, StyleSheet, View} from "react-native";
 import {useEffect, useRef, useState} from "react";
 
