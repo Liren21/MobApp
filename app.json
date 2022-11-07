@@ -18,7 +18,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.liren21.LastP"
     },
     "android": {
       "adaptiveIcon": {
@@ -26,7 +27,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.liren21.LastP",
-      "versionCode": 7
+      "versionCode": 8
     },
     "web": {
       "favicon": "./assets/favicon.png"

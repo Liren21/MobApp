@@ -1,8 +1,6 @@
 import * as React from 'react';
 import {observer} from "mobx-react";
 import WebView from "react-native-webview";
-
-
 import {ActivityIndicator, BackHandler, StatusBar, StyleSheet, View} from "react-native";
 import {useEffect, useRef, useState} from "react";
 
@@ -28,7 +26,7 @@ export default observer(() => {
 
     const Loading = () => <ActivityIndicator
         style={[styles.container, styles.horizontal]}
-        color={"blue"}
+        color={"red"}
         size={'large'}
     />
     return (
