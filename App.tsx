@@ -3,8 +3,9 @@ import {observer} from "mobx-react";
 
 
 export default observer(() => {
-    return (
-        <Route/>
-    );
+
+  return (
+      <Route/>
+  );
 })
 

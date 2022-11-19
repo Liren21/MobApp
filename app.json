@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "Pro zайм",
-    "slug": "LastP",
-    "version": "1.7.0",
+    "name": "ProZaim",
+    "slug": "ProZaim",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FFFFFF"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -19,22 +19,23 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.liren21.LastP"
+      "bundleIdentifier": "com.prozaim"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.liren21.LastP",
-      "versionCode": 8
+      "package": "com.prozaim",
+      "versionCode": 9
+
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "861cb148-5814-418d-9193-d147b2d56b6c"
+        "projectId": "3662a63b-cd89-4d27-b60b-70d225bb0f64"
       }
     }
   }
